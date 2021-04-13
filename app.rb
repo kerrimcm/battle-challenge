@@ -7,7 +7,9 @@ class Battle < Sinatra::Base
   end
     
   get '/' do
-    'Testing infrastructure working!'
+    @name_one = params[:name_one]
+    @name_two = params[:name_two]
+    erb(:index)
   end
   
   run! if app_file == $0
