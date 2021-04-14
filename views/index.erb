@@ -1,9 +1,18 @@
+
 <div class="container">
-  <div class="names">
-    <form action="text" method="post">
-      <div class="playerone"><input type="text" name="name_one" /></div>
-      <div class="playertwo"><input type="text" name="name_two" /></div>
-      <div class="submit"><input type="submit" submit="Submit" /></div>
-    </form>
-  </div>
+    <div class="names">
+<h1>Battle!</h1>
+<h2>Sign in to play</h2>
+<form action="/names" method="post">
+    <label for="name_one">
+        Player 1 name
+        <input type="text" placeholder="Enter name here" name="name_one">
+    </label>
+    <label for="name_two">
+        Player 2 name
+        <input type="text" placeholder="Enter name here" name="name_two">
+    </label>
+ <input type="submit" value="Submit">
+</form>
+</div>
 </div>
