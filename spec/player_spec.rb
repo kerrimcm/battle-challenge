@@ -16,13 +16,6 @@ describe Player do
     end 
   end 
 
-  context '#attack' do
-    it 'causes damage to ' do
-      expect(jason).to receive(:receive_damage)
-      kerri.attack(jason)
-    end
-  end 
-
   context '#receive_damage' do
     it 'reduces the player HP by 10' do
       expect { jason.receive_damage }.to change { jason.hit_points }.by(-10)

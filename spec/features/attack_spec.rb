@@ -9,7 +9,6 @@ feature 'Enables attacks' do
     sign_in_and_play
     click_link('Attack')
     click_link('OK')
-    save_and_open_page
     expect(page).not_to have_content 'Jason has 60HP'
     expect(page).to have_content 'Jason has 50HP'
   end 
