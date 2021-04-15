@@ -1,3 +1,5 @@
-<h1><%= @name_one %> vs. <%= @name_two %></h1>
-<p><%= @name_two %> has 60HP</p>
-<a href='/attack'>Attack</a>
+<h1><%= @name_one.name %> vs. <%= @name_two.name %></h1>
+
+<p><%= @name_two.name %>: <%= @name_two.hit_points %>HP</p>
+
+<a href='/attack'>Attack</a> 
