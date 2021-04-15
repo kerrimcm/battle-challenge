@@ -6,5 +6,6 @@ Now, with a basic understanding of HTTP, response-request mechanisms, Sinatra, a
 
 ## Progress so far
 
-By the end of Wednesday in Week 3, we've extracted the logic into a Model Player class to store variables like player names and HP. 
+Wednesday: By the end of the day, we've extracted the logic into a Model Player class to store variables like player names and HP. 
 
+Thursday: with hit points now successfully implemented in the Player class, in order not to violate the Single Responsibility Principle, we extract anything to do with game play (currently only 'attack' method) into another class called Game. We then slimmed down the controllers in `app.rb` to make `Game.new` accept two instances of `Player`, finally moving onto allowing the players to take turns which is still a WIP. 
