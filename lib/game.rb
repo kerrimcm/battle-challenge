@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
   attr_reader :player_one, :player_two, :player_one_turn
-  def initialize(player_one, player_two)
+  def initialize(player_one = Player.new, player_two = Player.new)
     @player_one = player_one
     @player_two = player_two
     @player_one_turn = true
@@ -23,4 +23,8 @@ class Game
   def change_turn
     @player_one_turn = !@player_one_turn
   end 
+
+  def lost?
+    self.defender.hit_points <= 0
+  end
 end

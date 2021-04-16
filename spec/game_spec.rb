@@ -1,8 +1,8 @@
 require 'game'
 
 describe Game do
-  let(:p1) { double :player, :receive_damage => true }
-  let(:p2) { double :player, :receive_damage => true }
+  let(:p1) { double(:player, :receive_damage => true)}
+  let(:p2) { double(:player, :receive_damage => true) }
   let(:game) { described_class.new(p1, p2) }
 
   describe '#initialize' do 
@@ -17,7 +17,7 @@ describe Game do
   
   describe '#attack' do
     it 'player 2 calls receive_damage' do
-      expect(p2).to receive(:receive_damage) 
+      expect(p2).to receive(:receive_damage)
       game.attack
     end
 
@@ -55,5 +55,12 @@ describe Game do
       game.change_turn
       expect(game.player_one_turn).to be false
     end 
+  end 
+
+  describe '#lost' do
+    it 'once a player reaches 0HP game is over' do
+      allow(p2).to receive(:hit_points).and_return(0)
+      expect(game.lost?).to be true
+    end
   end 
 end
