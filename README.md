@@ -15,7 +15,7 @@ Friday: finished the final challenge by the end of Friday where I "killed" the u
 ## How to play Battle!
 
 1. Clone this repository
-2. cd into the cloned directory
+2. `cd` into the cloned directory
 3. Run `bundle` to install dependencies
 4. Run `rackup`
 5. Navigate to http://localhost:9292/ in your browser
