@@ -4,6 +4,10 @@ require './lib/player'
 require './lib/game'
 
 class Battle < Sinatra::Base
+  before do
+    @game = Game.load
+  end
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -13,29 +17,27 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:name_one]), Player.new(params[:name_two]))
+    new_game = Game.new(Player.new(params[:name_one]), Player.new(params[:name_two]))
+    Game.create(new_game)
     redirect '/play'
   end 
  
   get '/play' do
-    @game = $game
     erb :play
   end 
 
   get '/attack' do
-    @game = $game
     @game.attack
     redirect '/game-over' if @game.lost?
     erb :attack
   end
 
   post '/change_turns' do
-    $game.change_turn
+    @game.change_turn
     redirect '/play'
   end 
 
   get '/game-over' do
-    @game = $game
     erb :game_over
   end 
 

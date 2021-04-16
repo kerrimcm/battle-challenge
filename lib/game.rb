@@ -2,10 +2,19 @@ require_relative 'player'
 
 class Game
   attr_reader :player_one, :player_two, :player_one_turn
-  def initialize(player_one = Player.new, player_two = Player.new)
+  
+  def initialize(player_one, player_two)
     @player_one = player_one
     @player_two = player_two
     @player_one_turn = true
+  end
+
+  def self.create(game)
+    @game = game
+  end
+
+  def self.load
+    @game
   end
 
   def attack
