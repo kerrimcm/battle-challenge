@@ -9,3 +9,13 @@ Now, with a basic understanding of HTTP, response-request mechanisms, Sinatra, a
 Wednesday: By the end of the day, we've extracted the logic into a Model Player class to store variables like player names and HP. 
 
 Thursday: with hit points now successfully implemented in the Player class, in order not to violate the Single Responsibility Principle, we extract anything to do with game play (currently only 'attack' method) into another class called Game. We then slimmed down the controllers in `app.rb` to make `Game.new` accept two instances of `Player`, finally moving onto allowing the players to take turns which is still a WIP. 
+
+Friday: finished the final challenge by the end of Friday where I "killed" the use of a global variable and the game now displays a message to tell you who won and who lost (the person who reached 0HP first)
+
+## How to play Battle!
+
+1. Clone this repository
+2. cd into the cloned directory
+3. Run `bundle` to install dependencies
+4. Run `rackup`
+5. Navigate to http://localhost:9292/ in your browser
